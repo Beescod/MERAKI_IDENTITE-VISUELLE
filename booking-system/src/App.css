@@ -21,17 +21,14 @@ body, html {
 
 .app-container.open {
   background: #e4ddd0;
-  position: relative;
-  overflow: hidden; /* Ensures the pseudo-element is contained within */
 }
-
 
 .logo-container {
   position: relative;
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
-  gap: 20px; /* Adjust this value to create the desired space */
+  gap: 20px; /* Space between logo images */
 }
 
 .logo {
@@ -39,8 +36,6 @@ body, html {
   opacity: 0;
   transform: scale(0.5);
   transition: opacity 1s ease, transform 1s ease;
-  position: relative; /* Needed for pseudo-element positioning */
-  overflow: hidden; /* Hide any overflow from the shine effect */
 }
 
 .app-container.open .logo {
@@ -78,5 +73,3 @@ body, html {
 .app-container.open .background {
   opacity: 1;
 }
-
-
