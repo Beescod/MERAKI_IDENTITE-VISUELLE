@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html {
+  height: 100%;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #ffffff;
-  min-height: 100vh;
+.app-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  background: #ffffff;
+  transition: background 1.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.app-container.open {
+  background: #dbf5ce
 }
 
-@keyframes App-logo-spin {
+.logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Adjust this value to create the desired space */
+}
+
+.logo {
+  width: 250px; /* Adjust the size as needed */
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.app-container.open .logo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animated-logo {
+  position: absolute;
+  top: 100px; /* Adjust positioning as needed */
+  width: 300px; /* Adjust size as needed */
+  animation: text-write 3s linear infinite;
+}
+
+@keyframes text-write {
   from {
-    transform: rotate(0deg);
+    clip-path: inset(0 100% 0 0);
   }
   to {
-    transform: rotate(360deg);
+    clip-path: inset(0 0 0 0);
   }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('/path/to/your/background-image.jpg') center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.app-container.open .background {
+  opacity: 1;
 }

@@ -1,30 +1,26 @@
-// App.js
-import React, { useState } from 'react';
-import logo from './';
-import SplashScreen from './components/SplashScreen';
-// import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import LogoImage from './assets/images/LoagoL.png';
+import LogoImage2 from './assets/images/LoagoL2.png';
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const handleSplashFinish = () => {
-    setShowSplash(false);
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="App">
-      {showSplash ? (
-        <SplashScreen onFinish={handleSplashFinish} />
-      ) : (
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          Learn React
-        </header>
-      )}
+    <div className={`app-container ${isLoaded ? 'open' : ''}`}>
+      <div className="logo-container">
+        <img src={LogoImage} className="logo" alt="Logo" />
+        <img src={LogoImage2} className={`animated-logo ${isLoaded ? 'fade-in' : ''}`} alt="Animated Logo" />
+      </div>
+      <div className="background" />
     </div>
   );
 }
+
 
 export default App;
