@@ -20,8 +20,11 @@ body, html {
 }
 
 .app-container.open {
-  background: #dbf5ce
+  background: #e4ddd0;
+  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element is contained within */
 }
+
 
 .logo-container {
   position: relative;
@@ -36,6 +39,8 @@ body, html {
   opacity: 0;
   transform: scale(0.5);
   transition: opacity 1s ease, transform 1s ease;
+  position: relative; /* Needed for pseudo-element positioning */
+  overflow: hidden; /* Hide any overflow from the shine effect */
 }
 
 .app-container.open .logo {
@@ -73,3 +78,5 @@ body, html {
 .app-container.open .background {
   opacity: 1;
 }
+
+
