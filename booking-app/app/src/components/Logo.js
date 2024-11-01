@@ -14,7 +14,7 @@ function Logo() {
   }, []);
 
   return (
-    (<BackgroundBeamsWithCollision>
+    (<BackgroundBeamsWithCollision className="app-container">
     <div className={`app-container ${isLoaded ? 'open' : ''}`}>
 
       <div className="logo-container">

@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Change to false after a period
-    }, 8000); // Set loading period to 3 seconds
+    }, 80000); // Set loading period to 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
