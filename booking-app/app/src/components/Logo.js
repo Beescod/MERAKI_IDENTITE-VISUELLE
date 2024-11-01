@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import '../assets/css/SplahScreen.css';
+import '../assets/css/Logo.css';
 import LogoImage from '../assets/images/LoagoL.png';
 import LogoImage2 from '../assets/images/LoagoL2.png';
 
-function SplahScreen() {
+
+function Logo() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -22,4 +23,4 @@ function SplahScreen() {
   );
 }
 
-export default SplahScreen;
+export default Logo;
