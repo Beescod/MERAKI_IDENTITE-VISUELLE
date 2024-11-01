@@ -2,7 +2,8 @@
 "use client"; // Mark this file as a client component
 
 import React, { useEffect, useState } from 'react';
-import Logo from '../components/Logo'; // Adjust the import path as necessary
+import Logo from '../components/Logo';
+import Navbar from '../components/Navbar'
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Change to false after a period
-    }, 80000); // Set loading period to 3 seconds
+    }, 8000); // Set loading period to 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -21,6 +22,7 @@ const Home = () => {
         <Logo /> // Show loading screen while loading is true
       ) : (
         <div>
+          <Navbar />
           <h1>hi</h1>
         </div>
       )}

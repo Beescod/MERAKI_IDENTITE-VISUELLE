@@ -1,7 +1,11 @@
+// import Navbar from './src/components/Navbar';
 import Home from './src/views/Home';
 
 export default function Page() {
   return (
-    <Home />
+    <div>
+      {/* <Navbar /> */}
+      <Home />
+    </div>
   );
 }
