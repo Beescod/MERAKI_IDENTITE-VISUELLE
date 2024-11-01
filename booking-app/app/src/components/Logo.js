@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import '../assets/css/Logo.css';
@@ -14,22 +15,24 @@ function Logo() {
   }, []);
 
   return (
-    (<BackgroundBeamsWithCollision className="app-container">
-    <div className={`app-container ${isLoaded ? 'open' : ''}`}>
-
-      <div className="logo-container">
-        <Image src={LogoImage} className="logo" alt="Logo" priority />
-        <Image
-          src={LogoImage2}
-          className={`animated-logo ${isLoaded ? 'fade-in' : ''}`}
-          alt="Animated Logo"
-          priority
-        />
+    <BackgroundBeamsWithCollision className="app-container">
+      <div className={`app-container ${isLoaded ? 'open' : ''}`}>
+        <div className="white-BD">
+          <div className="left-section"></div>
+          <div className="right-section"></div>
+        </div>
+        <div className="logo-container">
+          <Image src={LogoImage} className="logo" alt="Logo" priority />
+          <div className="shine-effect"></div>
+          <Image
+            src={LogoImage2}
+            className={`animated-logo ${isLoaded ? 'fade-in' : ''}`}
+            alt="Animated Logo"
+            priority
+          />
+        </div>
       </div>
-      <div className="background" />
-
-    </div>
-    </BackgroundBeamsWithCollision>)
+    </BackgroundBeamsWithCollision>
   );
 }
 
