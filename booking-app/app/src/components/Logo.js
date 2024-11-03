@@ -22,8 +22,10 @@ function Logo() {
           <div className="right-section"></div>
         </div>
         <div className="logo-container">
+          <div className="logo-container2">
           <Image src={LogoImage} className="logo" alt="Logo" priority />
           <div className="shine-effect"></div>
+          </div>
           <Image
             src={LogoImage2}
             className={`animated-logo ${isLoaded ? 'fade-in' : ''}`}
@@ -35,5 +37,6 @@ function Logo() {
     </BackgroundBeamsWithCollision>
   );
 }
+
 
 export default Logo;

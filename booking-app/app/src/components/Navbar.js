@@ -1,52 +1,48 @@
 import React, { useState } from 'react';
-import '../assets/css/Navbar.css'; // Link to the CSS styles
+import '../assets/css/Navbar.css';
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+  const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
+  const [menuClass, setMenuClass] = useState("menu hidden");
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  // Toggle burger menu
+  const updateMenu = () => {
+    setBurgerClass(isMenuClicked ? "burger-bar unclicked" : "burger-bar clicked");
+    setMenuClass(isMenuClicked ? "menu hidden" : "menu visible");
+    setIsMenuClicked(!isMenuClicked);
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        {/* Logo or App Name */}
-        <div className="logo">Meraki Booking</div>
+    <div className="navbar">
+      <nav>
+        <div className="burger-menu-container" onClick={updateMenu}>
+          <div className="burger-menu" >
+            <div className={burgerClass}></div>
+            <div className={burgerClass}></div>
+            <div className={burgerClass}></div>
+          </div>
+          <span className="menu-label">Menu</span>
+        </div>
+      </nav>
 
-        {/* Hamburger menu for mobile view */}
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰
-        </button>
-
-        {/* Main navigation */}
-        <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-          <ul>
-            <li><a href="#acceuil">Acceuil</a></li>
-            <li>
-              <a href="#a-propos">A propos</a>
-              <ul className="dropdown">
-                <li><a href="#notre-philosophie">Notre philosophie</a></li>
-                <li><a href="#a-propos-de-meraki">A propos de Meraki</a></li>
-                <li><a href="#meraki-team">Meraki Team</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#our-services">Our Services</a>
-              <ul className="dropdown">
-                <li><a href="#spa-massage">Spa: Massage et Maderotherapie</a></li>
-                <li><a href="#cheveux">Cheveux</a></li>
-                <li><a href="#onglerie">Onglerie</a></li>
-                <li><a href="#soins-du-visage">Soins du visage</a></li>
-                <li><a href="#esthetique">Esthetique: Epilations et Epilations Laser</a></li>
-                <li><a href="#nos-packs">Nos packs</a></li>
-              </ul>
-            </li>
-          </ul>
+      <div className={menuClass}>
+        <div className="nav-links">
+          <a href="#langues">FR/EN</a>
+          <a href="#Magazine">LE MAGAZINE</a>
+          <a href="#Reservations">RÉSERVER</a>
         </div>
       </div>
-    </nav>
+
+      <div className="navbar-container">
+        <div className="nav-links">
+          <a href="#langues">FR/EN</a>
+          <a href="#Magazine">LE MAGAZINE</a>
+          <a href="#Reservations">RÉSERVER</a>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Navbar;
