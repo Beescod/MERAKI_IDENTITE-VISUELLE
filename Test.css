@@ -1,0 +1,116 @@
+/* nav.css */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background-color: #f6f0e5;
+  }
+  
+  .menu-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .burger-menu-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .burger-menu2 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+  }
+  
+  .burger-line.open {
+    background-color: #000;
+    transform: rotate(45deg);
+  }
+  
+  .menu-label {
+    margin-left: 10px;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .close-button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #000;
+  }
+  
+  .menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .menu-column {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .menu-column h3 {
+    font-size: 1rem;
+    color: #a52a2a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-column p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0.2rem 0;
+  }
+  
+  .right-image {
+    flex: 1;
+    position: relative;
+    display: none;
+  }
+  
+  .right-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Responsive design */
+  @media (min-width: 1024px) {
+    .right-image {
+      display: block;
+    }
+  }
+  
