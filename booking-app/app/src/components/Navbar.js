@@ -5,6 +5,12 @@ const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
   const [menuClass, setMenuClass] = useState("menu hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
 
   // Toggle burger menu
   const updateMenu = () => {
@@ -27,11 +33,21 @@ const Navbar = () => {
       </nav>
 
       <div className={menuClass}>
-        <div className="nav-links">
-          <a href="#langues">FR/EN</a>
-          <a href="#Magazine">LE MAGAZINE</a>
-          <a href="#Reservations">RÉSERVER</a>
-        </div>
+        <nav>
+          <div className="burger-menu-container" onClick={updateMenu}>
+            <div className="burger-menu2" >
+              <div className={burgerClass}></div>
+              <div className={burgerClass}></div>
+              <div className={burgerClass}></div>
+            </div>
+            <span className="menu-label">Menu</span>
+          </div>
+          <div className="nav-links">
+            <a href="#langues">FR/EN</a>
+            <a href="#Magazine">LE MAGAZINE</a>
+            <a href="#Reservations">RÉSERVER</a>
+          </div>
+        </nav>
       </div>
 
       <div className="navbar-container">
