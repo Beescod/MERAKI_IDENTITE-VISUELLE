@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/Navbar.css';
 import Image from '../assets/images/LoagoL.png';
+// import MyImage from '../assets/images/LoagoL.png';
+import { MyImage } from '../assets/images/LoagoL.png';
+
 
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
@@ -11,15 +14,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      const imgUrl = '../assets/images/img 52.jpeg'; // Replace with dynamic path if necessary
-      setImageSrc(imgUrl);
-    };
-
-    fetchImage();
-  }, []);
 
   const updateMenu = () => {
     setBurgerClass(isMenuClicked ? "burger-bar unclicked" : "burger-bar clicked");
@@ -53,7 +47,13 @@ const Navbar = () => {
 
             </div>
             <div>
-              <img src={Image} alt="Description of the image" />
+              {/* <Image
+                src={MyImage}
+                alt="Description of the image"
+                layout="responsive"
+                width={500}
+                height={300}
+              /> */}
             </div>
           </div>
           <div className="menu-content">
