@@ -46,15 +46,6 @@ const Navbar = () => {
               <span className="menu-label text-style">Menu</span>
 
             </div>
-            <div>
-              {/* <Image
-                src={MyImage}
-                alt="Description of the image"
-                layout="responsive"
-                width={500}
-                height={300}
-              /> */}
-            </div>
           </div>
           <div className="menu-content">
             <h1 className="logo text-style">LA MAMOUNIA MARRAKECH</h1>
