@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/Navbar.css';
-import Image from '../assets/images/img 52.jpeg';
+import Image from '../assets/images/LoagoL.png';
 
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
@@ -42,15 +42,20 @@ const Navbar = () => {
 
       <div className={menuClass}>
         <nav>
-          <div className="burger-menu-container" onClick={updateMenu}>
-            <div className="burger-menu2">
-              <div className={burgerClass}></div>
-              <div className={burgerClass}></div>
-              <div className={burgerClass}></div>
-            </div>
-            <span className="menu-label text-style">Menu</span>
-          </div>
+          <div className="flex">
+            <div className="burger-menu-container" onClick={updateMenu}>
+              <div className="burger-menu2">
+                <div className={burgerClass}></div>
+                <div className={burgerClass}></div>
+                <div className={burgerClass}></div>
+              </div>
+              <span className="menu-label text-style">Menu</span>
 
+            </div>
+            <div>
+              <img src={Image} alt="Description of the image" />
+            </div>
+          </div>
           <div className="menu-content">
             <h1 className="logo text-style">LA MAMOUNIA MARRAKECH</h1>
             <div className="menu-items">
@@ -115,8 +120,8 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="nav-links">
           <a href="#langues" className="text-style">FR/EN</a>
-          <a href="#Magazine" className="text-style">LE MAGAZINE</a>
-          <a href="#Reservations" className="text-style">RÉSERVER</a>
+          <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
+          <a href="#Reservations" className="text-style2">RÉSERVER</a>
         </div>
       </div>
     </div>
