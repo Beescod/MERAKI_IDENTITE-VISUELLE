@@ -1,18 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../assets/css/Navbar.css';
-import Image from '../assets/images/LoagoL.png';
-// import MyImage from '../assets/images/LoagoL.png';
-import { MyImage } from '../assets/images/LoagoL.png';
-
+import Image from 'next/image';
+import hairdressing from '../assets/images/Hairdressing.jpg';
+import massages from '../assets/images/Massages.jpg';
+import Nailservices from '../assets/images/Nail-services.jpg';
+import Facialtreatments from '../assets/images/Facial-treatments.jpg';
+import Maderotherapy from '../assets/images/Maderotherapy.jpg';
+import Aesthetics from '../assets/images/Aesthetics.jpg';
+import Laser from '../assets/images/Laser.jpg';
+import defaultImage from '../assets/images/Default.jpg';
 
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
   const [menuClass, setMenuClass] = useState("menu hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [image, setImage] = useState(defaultImage);
+  const [hoverClass, setHoverClass] = useState("");
+  const [animationClass, setAnimationClass] = useState('');
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleMouseEnter = (img) => {
+    setAnimationClass('slide-in'); // Add slide-in class
+    setImage(img);
+  };
+
+  const handleMouseLeave = () => {
+    setAnimationClass('slide-out'); 
+    setImage(defaultImage);
   };
 
   const updateMenu = () => {
@@ -21,21 +34,11 @@ const Navbar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
-  const [image, setImage] = useState('default.jpg'); // Default image
-
-  const handleMouseEnter = (img) => {
-    setImage(img);
-  };
-
-  const handleMouseLeave = () => {
-    setImage('default.jpg'); // Reset to default image
-  };
-
   return (
     <div className="navbar">
       <nav>
         <div className="burger-menu-container" onClick={updateMenu}>
-          <div className="burger-menu" >
+          <div className="burger-menu">
             <div className={burgerClass}></div>
             <div className={burgerClass}></div>
             <div className={burgerClass}></div>
@@ -55,27 +58,28 @@ const Navbar = () => {
             <span className="menu-label text-style">Close</span>
           </div>
 
-          
           <div className="full-container">
             <div className="your-container">
               <div className="your">
-                <span>YOUR</span>
+                <span>SERVICES</span>
               </div>
               <div className="line"></div>
               <div className="right">
-                <span onMouseEnter={() => handleMouseEnter('stay.jpg')} onMouseLeave={handleMouseLeave}>STAY</span>
-                <span onMouseEnter={() => handleMouseEnter('table.jpg')} onMouseLeave={handleMouseLeave}>TABLE</span>
-                <span onMouseEnter={() => handleMouseEnter('care.jpg')} onMouseLeave={handleMouseLeave}>CARE</span>
-                <span onMouseEnter={() => handleMouseEnter('event.jpg')} onMouseLeave={handleMouseLeave}>EVENT</span>
+                <span onMouseEnter={() => handleMouseEnter(massages)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>MASSAGES</span>
+                <span onMouseEnter={() => handleMouseEnter(hairdressing)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>HAIRDRESSING</span>
+                <span onMouseEnter={() => handleMouseEnter(Nailservices)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>NAIL SERVICES</span>
+                <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Facial treatments</span>
+                <span onMouseEnter={() => handleMouseEnter(Maderotherapy)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Maderotherapy</span>
+                <span onMouseEnter={() => handleMouseEnter(Aesthetics)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Aesthetics</span>
+                <span onMouseEnter={() => handleMouseEnter(Laser)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Laser</span>
               </div>
             </div>
             <div className="image-container">
-              <img src={image} alt="Dynamic" />
+              <div className={`image-wrapper ${animationClass}`}>
+                <Image src={image} alt="Dynamic" layout="responsive" width={400} height={300} />
+              </div>
             </div>
           </div>
-
-
-
         </nav>
       </div>
 
