@@ -24,6 +24,7 @@ const Home = () => {
         <div className="selection">
           <Navbar />
           <section className="spa-section">
+            <div className="spa-section-in">
             <div className="spa-section-logo"></div>
             <h2>The Spa & Wellbeing</h2>
             <nav className="spa-nav">
@@ -33,6 +34,7 @@ const Home = () => {
               <a href="#salon">The Hairdressing Salon</a>
               <a href="#sports">The Sports</a>
             </nav>
+            </div>
           </section>
           {/* <section className="mamounia-section">
             <div className="mamounia-image">

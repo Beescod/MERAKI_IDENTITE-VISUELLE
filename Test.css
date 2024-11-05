@@ -1,116 +1,141 @@
-/* nav.css */
-.navbar {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100vh;
-    background-color: #f6f0e5;
+/* Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   
-  .menu-content {
-    flex: 1;
-    padding: 2rem;
-  }
-  
-  .burger-menu-container {
-    cursor: pointer;
+  /* Navbar */
+  .navbar {
+    background-color: transparent;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 5em; /* Define the navbar height */
   }
   
-  .burger-menu2 {
+  /* Navbar Container */
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Burger Menu */
+  .burger-menu-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem;
+    margin-right: 10px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .burger-menu, .burger-menu2 {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-  }
-  
-  .burger-line {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    transition: transform 0.3s ease;
-  }
-  
-  .burger-line.open {
-    background-color: #000;
-    transform: rotate(45deg);
-  }
-  
-  .menu-label {
-    margin-left: 10px;
-    color: #000;
-    font-weight: bold;
-  }
-  
-  .close-button {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
+    gap: 0.1rem;
+    justify-content: space-around;
+    height: 2rem;
     cursor: pointer;
+  }
+  
+  .burger-bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fffdfd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .burger-bar.clicked:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger-bar.clicked:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-bar.clicked:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  /* Menu Label */
+  .menu-label {
     color: #000;
-  }
-  
-  .logo {
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 1rem 0;
-    color: #000;
-  }
-  
-  .menu-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  .menu-column {
-    flex: 1;
-    min-width: 150px;
-  }
-  
-  .menu-column h3 {
     font-size: 1rem;
-    color: #a52a2a;
-    margin-bottom: 0.5rem;
-  }
-  
-  .menu-column p {
-    font-size: 0.9rem;
-    color: #333;
-    margin: 0.2rem 0;
-  }
-  
-  .right-image {
-    flex: 1;
-    position: relative;
-    display: none;
-  }
-  
-  .right-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .nav-links {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .nav-links a {
-    color: #000;
-    text-decoration: none;
+    padding-left: 0.5rem;
     font-weight: bold;
   }
   
-  /* Responsive design */
-  @media (min-width: 1024px) {
-    .right-image {
-      display: block;
+  /* Menu */
+  .menu {
+    position: fixed; /* Use fixed to ensure it fills the screen */
+    top: 0; /* Start from the top */
+    left: 0; /* Start from the left */
+    background-color: rgb(247, 240, 229);
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    z-index: 99;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 1024px) {
+    .menu {
+      height: 100vh; /* Ensure full height on smaller screens */
     }
   }
   
+  @media (max-width: 768px) {
+    .menu {
+      height: 100vh; /* Ensure full height on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu {
+      height: 100vh; /* Ensure full height on smaller screens */
+    }
+  }
+  
+  .menu.visible {
+    transform: translateY(0);
+  }
+  
+  .menu.hidden {
+    transform: translateY(-100%);
+  }
+  
+  /* Flex */
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    height: 100vh;
+    background-size: cover;
+  }
+  
+
+
+
+
+

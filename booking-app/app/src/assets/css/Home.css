@@ -4,11 +4,11 @@ body {
 }
 
 .selection {
-  background-image: url('../images/img 52.jpeg');
+  /* background-image: url('../images/img 52.jpeg'); */
   background-size: cover;
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  min-height: 100vh; /* Ensures the section takes at least the full viewport height */
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 /* Additional media queries to improve responsiveness */
@@ -20,13 +20,13 @@ body {
 
 @media (max-width: 768px) {
   .selection {
-    background-attachment: scroll; /* Allows scrolling on smaller devices for better performance */
+    background-attachment: scroll;
   }
 }
 
 @media (max-width: 480px) {
   .selection {
-    background-position: top; /* Adjusts the image position for smaller screens */
+    background-position: top;
   }
 }
 
@@ -36,39 +36,41 @@ body {
   background: rgba(0, 0, 0, 0.5) url('../images/spa-section.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
-  min-height: 100vh; /* Full screen height */
+  min-height: 100vh;
 }
 
 .spa-section-logo {
   text-align: center;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.5) url('../images/LoagoL.png') no-repeat center center;
+  background: url('../images/LoagoL.png') no-repeat center center;
   background-size: cover;
   min-height: 10vh;
 }
 
+.divider {
+  width: 80%;
+  margin: 1rem auto;
+  border: 1px solid #fff;
+}
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .spa-section {
-    min-height: 60vh; /* 40% screen height on mobile */
+    min-height: 60vh;
   }
 }
 
 @media (max-width: 1024px) {
   .spa-section {
-    min-height: 70vh; /* 40% screen height on mobile */
+    min-height: 70vh;
   }
 }
 
 @media (max-width: 480px) {
   .spa-section {
-    min-height: 50vh; /* 40% screen height on mobile */
+    min-height: 50vh;
   }
 }
-
-
-
 
 .spa-nav {
   display: flex;
@@ -123,9 +125,10 @@ body {
     flex-direction: row;
     align-items: center;
   }
-  
+
   .mamounia-content {
     margin-left: 2rem;
     text-align: left;
   }
 }
+

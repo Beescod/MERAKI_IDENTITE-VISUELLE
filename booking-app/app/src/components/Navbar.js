@@ -21,6 +21,16 @@ const Navbar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  const [image, setImage] = useState('default.jpg'); // Default image
+
+  const handleMouseEnter = (img) => {
+    setImage(img);
+  };
+
+  const handleMouseLeave = () => {
+    setImage('default.jpg'); // Reset to default image
+  };
+
   return (
     <div className="navbar">
       <nav>
@@ -35,76 +45,37 @@ const Navbar = () => {
       </nav>
 
       <div className={menuClass}>
-        <nav>
-          <div className="flex">
-            <div className="burger-menu-container" onClick={updateMenu}>
-              <div className="burger-menu2">
-                <div className={burgerClass}></div>
-                <div className={burgerClass}></div>
-                <div className={burgerClass}></div>
-              </div>
-              <span className="menu-label text-style">Menu</span>
-
+        <nav className="flex">
+          <div className="burger-menu-container" onClick={updateMenu}>
+            <div className="burger-menu2">
+              <div className={burgerClass}></div>
+              <div className={burgerClass}></div>
+              <div className={burgerClass}></div>
             </div>
+            <span className="menu-label text-style">Close</span>
           </div>
-          <div className="menu-content">
-            <h1 className="logo text-style">LA MAMOUNIA MARRAKECH</h1>
-            <div className="menu-items">
-              <div className="menu-column">
-                <h3 className="text-style">HÉBERGEMENTS</h3>
-                <p className="text-style">Les Chambres</p>
-                <p className="text-style">Les Suites</p>
-                <p className="text-style">Les Suites d'Exception</p>
-                <p className="text-style">Les Riads</p>
+
+          
+          <div className="full-container">
+            <div className="your-container">
+              <div className="your">
+                <span>YOUR</span>
               </div>
-              <div className="menu-column">
-                <h3 className="text-style">SPA & BIEN-ÊTRE</h3>
-                <p className="text-style">Les Massages</p>
-                <p className="text-style">Les Hammams</p>
-                <p className="text-style">Les Soins</p>
-                <p className="text-style">Le Salon de Coiffure & Beauté</p>
-                <p className="text-style">Les Sports</p>
+              <div className="line"></div>
+              <div className="right">
+                <span onMouseEnter={() => handleMouseEnter('stay.jpg')} onMouseLeave={handleMouseLeave}>STAY</span>
+                <span onMouseEnter={() => handleMouseEnter('table.jpg')} onMouseLeave={handleMouseLeave}>TABLE</span>
+                <span onMouseEnter={() => handleMouseEnter('care.jpg')} onMouseLeave={handleMouseLeave}>CARE</span>
+                <span onMouseEnter={() => handleMouseEnter('event.jpg')} onMouseLeave={handleMouseLeave}>EVENT</span>
               </div>
-              <div className="menu-column">
-                <h3 className="text-style">RESTAURANTS</h3>
-                <p className="text-style">L'Asiatique par Jean-Georges</p>
-                <p className="text-style">L'Italien par Jean-Georges</p>
-                <p className="text-style">Le Marocain</p>
-                <p className="text-style">Le Pavillon de la Piscine</p>
-                <p className="text-style">Le Brunch</p>
-              </div>
-              <div className="menu-column">
-                <h3 className="text-style">BARS</h3>
-                <p className="text-style">Le Bar Majorelle</p>
-                <p className="text-style">Le Club</p>
-                <p className="text-style">Le Bar de la Piscine</p>
-                <p className="text-style">Le Churchill</p>
-              </div>
-              <div className="menu-column">
-                <h3 className="text-style">SALONS DE THÉ</h3>
-                <p className="text-style">Le Menzeh par Pierre Hermé</p>
-                <p className="text-style">Le Salon de Thé par Pierre Hermé</p>
-              </div>
-              <div className="menu-column">
-                <h3 className="text-style">EXCLUSIFS</h3>
-                <p className="text-style">L'Œnothèque</p>
-                <p className="text-style">La Salle de Jeux</p>
-              </div>
+            </div>
+            <div className="image-container">
+              <img src={image} alt="Dynamic" />
             </div>
           </div>
 
-          <div className="right-image">
-            <div
-              style={{
-                backgroundImage: 'url()', // Replace with your image path
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100%',
-                height: '100%',
-              }}
-              aria-label="Right-side decor"
-            />
-          </div>
+
+
         </nav>
       </div>
 
