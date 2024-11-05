@@ -3,7 +3,7 @@ import '../assets/css/Navbar.css';
 import Image from 'next/image';
 import hairdressing from '../assets/images/Hairdressing.jpg';
 import massages from '../assets/images/Massages.jpg';
-import Nailservices from '../assets/images/Nail-services.jpg';
+import Nailservices from '../assets/images/Nail-services.jpeg';
 import Facialtreatments from '../assets/images/Facial-treatments.jpg';
 import Maderotherapy from '../assets/images/Maderotherapy.jpg';
 import Aesthetics from '../assets/images/Aesthetics.jpg';
@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   const handleMouseLeave = () => {
-    setAnimationClass('slide-out'); 
+    setAnimationClass('slide-out');
     setImage(defaultImage);
   };
 
@@ -55,31 +55,49 @@ const Navbar = () => {
               <div className={burgerClass}></div>
               <div className={burgerClass}></div>
             </div>
-            <span className="menu-label text-style">Close</span>
+            <span className="menu-label text-style2">Close</span>
           </div>
 
           <div className="full-container">
             <div className="your-container">
-              <div className="your">
-                <span>SERVICES</span>
+              <div className="your-container2">
+                <div className="your2">
+                  <div className="your">
+                    <span className="text-style31" >SERVICES</span>
+                  </div>
+                  <div className="line"></div>
+                  <div className="right">
+                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>MASSAGES</span>
+                    <span onMouseEnter={() => handleMouseEnter(hairdressing)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>HAIRDRESSING</span>
+                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>NAIL SERVICES</span>
+                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Facial treatments</span>
+                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Maderotherapy</span>
+                    <span onMouseEnter={() => handleMouseEnter(Aesthetics)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Aesthetics</span>
+                    <span onMouseEnter={() => handleMouseEnter(Laser)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Laser</span>
+                  </div>
+                </div>
+                <div className="menu-options">
+                  <div className="menu-item">
+                    <span className="line-divider">|</span>
+                    <span className="text-style31">SPECIAL OFFERS</span>
+                  </div>
+                  <div className="menu-item">
+                    <span className="line-divider">|</span>
+                    <span className="text-style31">BOUTIQUES</span>
+                  </div>
+                </div>
               </div>
-              <div className="line"></div>
-              <div className="right">
-                <span onMouseEnter={() => handleMouseEnter(massages)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>MASSAGES</span>
-                <span onMouseEnter={() => handleMouseEnter(hairdressing)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>HAIRDRESSING</span>
-                <span onMouseEnter={() => handleMouseEnter(Nailservices)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>NAIL SERVICES</span>
-                <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Facial treatments</span>
-                <span onMouseEnter={() => handleMouseEnter(Maderotherapy)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Maderotherapy</span>
-                <span onMouseEnter={() => handleMouseEnter(Aesthetics)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Aesthetics</span>
-                <span onMouseEnter={() => handleMouseEnter(Laser)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Laser</span>
-              </div>
-            </div>
-            <div className="image-container">
-              <div className={`image-wrapper ${animationClass}`}>
-                <Image src={image} alt="Dynamic" layout="responsive" width={400} height={300} />
+
+              <div className="image-container">
+                <div className={`image-wrapper ${animationClass}`}>
+                  <Image src={image} alt="Dynamic" layout="responsive" width={400} />
+                </div>
               </div>
             </div>
           </div>
+
+
+
         </nav>
       </div>
 
