@@ -1,189 +1,28 @@
-.full-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .your-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Adjusted to remove space on the right */
-    width: 100%;
-    gap: 20px;
-  }
-  
-  .your2 {
-    flex: 1;
-    text-align: right;
-    padding-right: 10px;
-    color: black;
-    height: 40vh;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .line {
-    width: 1.5px;
-    background: black;
-    height: 40%;
-  }
-  
-  .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 10px;
-    color: black;
-  }
-  
-  .right span {
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  .image-container {
-    width: 50%; /* Adjusted to remove space on the right */
-    display: flex;
-    justify-content: flex-end; /* Adjusted to remove space on the right */
-    align-items: center;
-  }
-  
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  @media (max-width: 1024px) {
-    .image-container {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .full-container {
-      flex-direction: column;
-      width: 100vh;
-    }
-  
-    .your-container {
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .your {
-      text-align: center;
-      padding-right: 0;
-    }
-  
-    .line {
-      width: 50%;
-      height: 1px;
-    }
-  
-    .right {
-      align-items: center;
-      padding-left: 0;
-    }
-  }
-  
-  .text-style3 {
-    color: #000000;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  .text-style31 {
-    font-size: 0.8rem;
-    font-family: serif;
-  }
-  
-  .text-style3::after {
-    content: '';
-    position: absolute;
-    background-color: #333;
-    transform: translateX(-50%) scaleX(0);
-    transition: transform 0.3s ease;
-  }
-  
-  .text-style3:hover {
-    color: rgba(105, 95, 76, 0.8);
-  }
-  
-  .text-style:hover::after {
-    position: absolute;
-    background-color: #333;
-    transform: translateX(-50%) scaleX(0);
-    transition: transform 0.3s ease;
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideOut {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
-  
-  .image-wrapper.slide-in {
-    animation: slideIn 0.5s forwards;
-  }
-  
-  .image-wrapper.zoom-in {
-    animation: slideIn 0.5s forwards;
-  }
-  
-  .image-wrapper.slide-out {
-    animation: slideOut 0.5s backwards;
-  }
-  
-  .menu-options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    font-family: 'serif';
-    background-color: #f7f0e5;
-    margin-top: 15px;
-  }
-  
-  .menu-item {
-    display: flex;
-    align-items: center;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-  }
-  
-  .line-divider {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    color: #000;
-  }
-  
-  .your-container2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+.navbar {
+  position: fixed;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: black; /* Add black background when scrolled */
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-container.navbar-scrolled .language-options {
+  display: none; /* Hide language options when scrolled */
+}
+
+.navbar-container .nav-logo {
+  display: none; /* Initially hide logo */
+}
+
+.navbar-container.navbar-scrolled .nav-logo {
+  display: block;
+  margin: 0 auto; /* Center logo in navbar */
+}

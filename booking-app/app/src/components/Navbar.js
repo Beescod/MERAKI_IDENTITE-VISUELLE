@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/css/Navbar.css';
 import Image from 'next/image';
 import hairdressing from '../assets/images/Hairdressing.jpg';
-import massages from '../assets/images/Massages.jpg';
-import Nailservices from '../assets/images/Nail-services.jpeg';
+// import massages from '../assets/images/Massages.jpg';
+// import Nailservices from '../assets/images/Nail-services.jpeg';
 import Facialtreatments from '../assets/images/Facial-treatments.jpg';
-import Maderotherapy from '../assets/images/Maderotherapy.jpg';
+// import Maderotherapy from '../assets/images/Maderotherapy.jpg';
 import Aesthetics from '../assets/images/Aesthetics.jpg';
 import Laser from '../assets/images/Laser.jpg';
 import defaultImage from '../assets/images/Default.jpg';
+import LoagoL from '../assets/images/LoagoL.png';
 
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
@@ -17,15 +18,29 @@ const Navbar = () => {
   const [image, setImage] = useState(defaultImage);
   const [hoverClass, setHoverClass] = useState("");
   const [animationClass, setAnimationClass] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleMouseEnter = (img) => {
     setAnimationClass('slide-in'); // Add slide-in class
     setImage(img);
+    setHoverClass('hovered'); // Add hover class
   };
 
   const handleMouseLeave = () => {
     setAnimationClass('slide-out');
     setImage(defaultImage);
+    setHoverClass(''); // Remove hover class
   };
 
   const updateMenu = () => {
@@ -35,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <nav>
         <div className="burger-menu-container" onClick={updateMenu}>
           <div className="burger-menu">
@@ -64,19 +79,62 @@ const Navbar = () => {
                 <div className="your2">
                   <div className="line-container">
                     <div className="your">
-                      <span className="text-style31" >SERVICES</span>
+                      <span className="text-style31">SERVICES</span>
                     </div>
                     <div className="line"></div>
                   </div>
                   <div className="right">
-                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>MASSAGES</span>
-                    <span onMouseEnter={() => handleMouseEnter(hairdressing)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>HAIRDRESSING</span>
-                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>NAIL SERVICES</span>
-                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Facial treatments</span>
-                    <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Maderotherapy</span>
-                    <span onMouseEnter={() => handleMouseEnter(Aesthetics)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Aesthetics</span>
-                    <span onMouseEnter={() => handleMouseEnter(Laser)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>Laser</span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Facialtreatments)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      MASSAGES
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(hairdressing)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      HAIRDRESSING
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Facialtreatments)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      NAIL SERVICES
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Facialtreatments)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      Facial treatments
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Facialtreatments)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      Maderotherapy
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Aesthetics)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      Aesthetics
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Laser)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      Laser
+                    </span>
                   </div>
+
                 </div>
                 <div className="menu-options">
                   <div className="menu-item">
@@ -97,15 +155,21 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-
-
-
         </nav>
       </div>
 
-      <div className="navbar-container">
+      <div className={`navbar-container ${isScrolled ? 'navbar-scrolled' : ''}`}>
+        <div className="language-options" style={{ display: isScrolled ? 'none' : 'flex' }}>
+          <a className="text-style" href="#">FR</a>
+          <a className="text-style" href="#">/EN</a>
+        </div>
+        <div className="nav-logo" style={{ display: isScrolled ? 'block' : 'none' }}>
+          {/* <Image src="/path-to-logo.png" alt="Logo" /> */}
+            <a href="/">
+              <Image src={LoagoL} alt="Dynamic" layout="intrinsic" width={400} height={200} />
+            </a>
+        </div>
         <div className="nav-links">
-          <a href="#langues" className="text-style">FR/EN</a>
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
           <a href="#Reservations" className="text-style2">RÉSERVER</a>
         </div>

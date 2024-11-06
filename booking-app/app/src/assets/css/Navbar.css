@@ -21,7 +21,7 @@ body {
   width: 100%;
   z-index: 100;
   height: 5em;
-  /* Define the navbar height */
+  transition: background-color 0.3s ease;
 }
 
 /* Navbar Container */
@@ -32,8 +32,26 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  gap: 1em;
+  margin-top: 22px;
 }
 
+.navbar.scrolled {
+  background-color: black; /* Add black background when scrolled */
+}
+
+.navbar-container.navbar-scrolled .language-options {
+  display: none;
+}
+
+.navbar-container .nav-logo {
+  display: none;
+}
+
+.navbar-container.navbar-scrolled .nav-logo {
+  display: block;
+  margin: 0 auto;
+}
 
 /* Burger Menu */
 .burger-menu-container {
@@ -55,6 +73,13 @@ body {
   justify-content: space-around;
   height: 2rem;
   cursor: pointer;
+}
+
+.language-options {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  color:white;
 }
 
 
@@ -135,6 +160,7 @@ body {
   overflow: hidden; /* Prevents any overflow issues */
   padding: 0; /* Remove any extra padding */
   margin: 0;  /* Remove any extra margin */
+  font-family: serif;
 }
 
 /* Media query for responsiveness */
@@ -252,6 +278,7 @@ body {
 /* Text Style */
 .text-style {
   color: #fffefe;
+  font-family: serif;
   /* Change to your desired text color */
   font-size: 1rem;
   /* Adjust the font size as needed */
@@ -262,6 +289,7 @@ body {
 
 .nav-links a {
   color: white;
+  font-family: serif;
 }
 
 
@@ -272,6 +300,7 @@ body {
   font-size: 1.5rem;
   transition: color 0.3s ease;
   cursor: pointer;
+  font-family: serif;
 }
 
 .text-style::after {
@@ -640,7 +669,7 @@ transition: transform 0.3s ease, opacity 0.3s ease
   transition: color 0.3s ease;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  
+  font-family: serif;
 }
 
 .text-style31::after {
@@ -654,4 +683,36 @@ transition: transform 0.3s ease, opacity 0.3s ease
 .text-style31:hover {
   color: rgba(105, 95, 76, 0.8);
   /* Change text color on hover */
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .language-options {
+    display: flex; /* Only show language options */
+  }
+}
+
+/* Keep other nav links visible on desktop */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    gap: 2rem; /* Adjust as needed */
+  }
+  .language-options {
+    display: flex;
+  }
+}
+
+.language-options a {
+  color: #ffffff; /* Text color for language links */
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: serif;
+}
+.language-options a:hover {
+  color: rgba(105, 95, 76, 0.8);
 }
