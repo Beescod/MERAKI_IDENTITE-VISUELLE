@@ -114,7 +114,7 @@ body {
   color: #000;
   font-size: 1rem;
   padding-left: 0.5rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 
@@ -256,7 +256,6 @@ body {
   font-size: 1rem;
   /* Adjust the font size as needed */
   font-weight: normal;
-  /* Set the font weight to normal or bold */
   transition: color 0.3s ease;
   /* Optional: transition effect for color changes */
 }
@@ -304,7 +303,6 @@ body {
   font-size: 1rem;
   /* Adjust the font size as needed */
   font-weight: normal;
-  /* Set the font weight to normal or bold */
   transition: color 0.3s ease;
   /* Optional: transition effect for color changes */
 }
@@ -397,6 +395,18 @@ body {
   align-items: center;
 }
 
+.line-container {
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+  color: black;
+  height: 40vh;
+  font-size: 15px;
+  font-weight: 300;
+
+  display: flex;
+  align-items: center;
+}
 
 .line {
   width: 1px;
@@ -412,7 +422,7 @@ body {
   align-items: flex-start;
   font-size: 2rem;
   font-family: serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .right span {
@@ -434,56 +444,102 @@ body {
   height: auto;
 }
 
+.menu-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* Adjust spacing as needed */
+  font-family: 'serif'; /* Ensure the font matches your design */
+  background-color: #f7f0e5; /* Match the background color in your design */
+  margin-top: 15px;
+}
+
 @media (max-width: 1024px) {
   .image-container {
     display: none;
   }
 }
-
 @media (max-width: 600px) {
   .full-container {
+    display: flex;
     flex-direction: column;
-    width: 100vh;
+    width: 100%;
+    height: 100vh;
     align-items: center;
-    padding: 20px; /* Add padding for better spacing */
-  }
+    padding: 20px;
+}
+
 
   .your-container {
     width: 100%;
+    /* flex-direction: column; */
+    align-items: center;
+    /* gap: 20px; */
+  }
+
+  .your-container2 {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Add gap between elements */
+    height: 50%;
+    gap: 30px;
+    padding-left: 0;  
   }
 
+  .your2 {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    color: black;
+    height: 40vh;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .line-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    gap: 20px; 
+  }
+  
   .your {
+    font-size: 1.2rem;
+    position: absolute;
+    top: -50px;
     text-align: center;
-    padding-right: 0;
-    font-size: 1.2rem; /* Adjust font size for better readability */
   }
-
+  
   .line {
     width: 1px;
     background: black;
     height: 280px; /* Adjust height to match design */
-    margin-right: 40px;
-    margin-left: 40px;
+    margin: 0 20px;
   }
-
+  
   .right {
-    align-items: center;
-    padding-left: 0;
-    font-size: 1rem; /* Adjust font size for better readability */
+    padding-left: 10px;
+    font-size: 1rem; /* Adjust font size for readability */
   }
+  
 
   .menu-options {
     flex-direction: column;
-    gap: 10px; /* Add gap between menu items */
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'serif'; /* Ensure the font matches your design */
+    margin-top: 15px;
   }
 
   .menu-item {
     font-size: 1rem; /* Adjust font size for better readability */
   }
 }
+
 
 
 
@@ -496,10 +552,8 @@ body {
 }
 
 .text-style312 {
-font-size: 0.8rem; /* Larger font for the main services */
 font-family: serif; /* Serif font for a classic look */
 margin-right: 10px;
-font-size: 1.2rem;
 color: #000000;
 font-size: 1.1rem;
 transition: color 0.3s ease;
@@ -561,26 +615,15 @@ transition: transform 0.3s ease, opacity 0.3s ease
   animation: slideOut 0.5s backwards;
 }
 
-
-.menu-options {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px; /* Adjust spacing as needed */
-  font-family: 'serif'; /* Ensure the font matches your design */
-  background-color: #f7f0e5; /* Match the background color in your design */
-
-  margin-top: 15px;
-}
-
 .menu-item {
   display: flex;
   align-items: center;
   color: #000; /* Adjust color to match your design */
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.1rem; /* Adjust font size as needed */
   text-transform: uppercase;
   font-size: 1.1rem;
+  width: 200px;
 }
 
 .line-divider {

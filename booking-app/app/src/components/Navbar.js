@@ -62,10 +62,12 @@ const Navbar = () => {
             <div className="your-container">
               <div className="your-container2">
                 <div className="your2">
-                  <div className="your">
-                    <span className="text-style31" >SERVICES</span>
+                  <div className="line-container">
+                    <div className="your">
+                      <span className="text-style31" >SERVICES</span>
+                    </div>
+                    <div className="line"></div>
                   </div>
-                  <div className="line"></div>
                   <div className="right">
                     <span onMouseEnter={() => handleMouseEnter(Facialtreatments)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>MASSAGES</span>
                     <span onMouseEnter={() => handleMouseEnter(hairdressing)} onMouseLeave={handleMouseLeave} className={`text-style3 ${hoverClass}`}>HAIRDRESSING</span>
