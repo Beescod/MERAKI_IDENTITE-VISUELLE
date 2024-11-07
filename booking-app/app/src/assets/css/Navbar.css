@@ -10,6 +10,18 @@ body {
   box-sizing: border-box;
 }
 
+header {
+  padding: 10px 100px;
+  background: transparent;
+  transition: padding 0.3s ease, background 0.3s ease;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background: #fff;
+}
+
+
 /* Navbar */
 .navbar {
   background-color: transparent;
@@ -24,6 +36,10 @@ body {
   transition: background-color 0.3s ease;
 }
 
+.navbar.scrolled {
+  background-color: black; /* Add black background when scrolled */
+}
+
 /* Navbar Container */
 .navbar-container {
   display: flex;
@@ -34,10 +50,6 @@ body {
   margin: auto;
   gap: 1em;
   margin-top: 22px;
-}
-
-.navbar.scrolled {
-  background-color: black; /* Add black background when scrolled */
 }
 
 .navbar-container.navbar-scrolled .language-options {
@@ -81,7 +93,6 @@ body {
   gap: 0.1rem;
   color:white;
 }
-
 
 .flex {
   display: flex;
@@ -715,4 +726,21 @@ transition: transform 0.3s ease, opacity 0.3s ease
 }
 .language-options a:hover {
   color: rgba(105, 95, 76, 0.8);
+}
+
+.navbar.scrolled {
+  background-color: black; /* Add black background when scrolled */
+}
+
+.navbar-container.navbar-scrolled .language-options {
+  display: none;
+}
+
+.navbar-container .nav-logo {
+  display: none;
+}
+
+.navbar-container.navbar-scrolled .nav-logo {
+  display: block;
+  margin: 0 auto;
 }

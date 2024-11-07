@@ -22,14 +22,18 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 0;
+      setIsScrolled(scrolled);
+      console.log("Is scrolled:", scrolled); // Logs true if scrolled, false if not
     };
-
+  
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
+
 
   const handleMouseEnter = (img) => {
     setAnimationClass('slide-in'); // Add slide-in class
@@ -49,7 +53,21 @@ const Navbar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
+    <header className={isSticky ? 'sticky' : ''}>
     <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <nav>
         <div className="burger-menu-container" onClick={updateMenu}>
@@ -175,6 +193,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    </header>
   );
 };
 
