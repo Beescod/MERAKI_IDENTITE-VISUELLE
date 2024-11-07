@@ -21,18 +21,22 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    console.log("Attaching scroll event listener");
     const handleScroll = () => {
-      const scrolled = window.scrollY > 0;
+      console.log("Scroll event triggered");
+      const scrolled = window.scrollY > 50;
       setIsScrolled(scrolled);
-      console.log("Is scrolled:", scrolled); // Logs true if scrolled, false if not
+      console.log("Is scrolled:", scrolled);
     };
   
     window.addEventListener('scroll', handleScroll);
     return () => {
+      console.log("Removing scroll event listener");
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   
+
 
 
   const handleMouseEnter = (img) => {
@@ -53,21 +57,7 @@ const Navbar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
-  const [isSticky, setIsSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <header className={isSticky ? 'sticky' : ''}>
     <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <nav>
         <div className="burger-menu-container" onClick={updateMenu}>
@@ -183,9 +173,9 @@ const Navbar = () => {
         </div>
         <div className="nav-logo" style={{ display: isScrolled ? 'block' : 'none' }}>
           {/* <Image src="/path-to-logo.png" alt="Logo" /> */}
-            <a href="/">
-              <Image src={LoagoL} alt="Dynamic" layout="intrinsic" width={400} height={200} />
-            </a>
+          <a href="/">
+            <Image src={LoagoL} alt="Dynamic" layout="intrinsic" width={400} height={200} />
+          </a>
         </div>
         <div className="nav-links">
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
@@ -193,7 +183,6 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-    </header>
   );
 };
 

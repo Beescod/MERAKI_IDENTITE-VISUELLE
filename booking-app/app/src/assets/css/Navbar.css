@@ -10,18 +10,6 @@ body {
   box-sizing: border-box;
 }
 
-header {
-  padding: 10px 100px;
-  background: transparent;
-  transition: padding 0.3s ease, background 0.3s ease;
-}
-
-header.sticky {
-  padding: 5px 100px;
-  background: #fff;
-}
-
-
 /* Navbar */
 .navbar {
   background-color: transparent;
@@ -37,7 +25,8 @@ header.sticky {
 }
 
 .navbar.scrolled {
-  background-color: black; /* Add black background when scrolled */
+  background-color: black;
+  transition: background-color 0.3s ease;
 }
 
 /* Navbar Container */
@@ -91,7 +80,7 @@ header.sticky {
   display: flex;
   align-items: center;
   gap: 0.1rem;
-  color:white;
+  color: white;
 }
 
 .flex {
@@ -104,11 +93,13 @@ header.sticky {
 }
 
 .burger-menu2 div {
-  background-color: rgb(0, 0, 0); /* Change the color to white */
+  background-color: rgb(0, 0, 0);
+  /* Change the color to white */
 }
 
 .menu-label {
-  color: rgb(0, 0, 0); /* Change the text color to white */
+  color: rgb(0, 0, 0);
+  /* Change the text color to white */
 }
 
 .text-style2 {
@@ -160,25 +151,34 @@ header.sticky {
   top: 0;
   left: 0;
   background-color: rgb(247, 240, 229);
-  height: 100vh; /* Full viewport height */
-  width: 100vw;  /* Full viewport width */
+  height: 100vh;
+  /* Full viewport height */
+  width: 100vw;
+  /* Full viewport width */
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translateY(-100%);
   transition: transform 0.5s ease;
   z-index: 99;
-  overflow: hidden; /* Prevents any overflow issues */
-  padding: 0; /* Remove any extra padding */
-  margin: 0;  /* Remove any extra margin */
+  overflow: hidden;
+  /* Prevents any overflow issues */
+  padding: 0;
+  /* Remove any extra padding */
+  margin: 0;
+  /* Remove any extra margin */
   font-family: serif;
 }
 
 /* Media query for responsiveness */
-@media (max-width: 1024px), (max-width: 768px), (max-width: 480px) {
+@media (max-width: 1024px),
+(max-width: 768px),
+(max-width: 480px) {
   .menu {
-    height: 100vh; /* Ensure full height on all smaller screens */
-    width: 100vw;  /* Ensure full width on all smaller screens */
+    height: 100vh;
+    /* Ensure full height on all smaller screens */
+    width: 100vw;
+    /* Ensure full width on all smaller screens */
   }
 }
 
@@ -409,7 +409,7 @@ header.sticky {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 20px; 
+  gap: 20px;
 
 }
 
@@ -419,7 +419,7 @@ header.sticky {
   align-items: center;
   height: 50%;
   gap: 60px;
-  padding-left: 200px;  
+  padding-left: 200px;
 }
 
 .your2 {
@@ -451,7 +451,8 @@ header.sticky {
 .line {
   width: 1px;
   background: black;
-  height: 280px; /* Adjust height to match design */
+  height: 280px;
+  /* Adjust height to match design */
   margin-right: 40px;
   margin-left: 40px;
 }
@@ -488,9 +489,12 @@ header.sticky {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px; /* Adjust spacing as needed */
-  font-family: 'serif'; /* Ensure the font matches your design */
-  background-color: #f7f0e5; /* Match the background color in your design */
+  gap: 60px;
+  /* Adjust spacing as needed */
+  font-family: 'serif';
+  /* Ensure the font matches your design */
+  background-color: #f7f0e5;
+  /* Match the background color in your design */
   margin-top: 15px;
 }
 
@@ -499,6 +503,7 @@ header.sticky {
     display: none;
   }
 }
+
 @media (max-width: 600px) {
   .full-container {
     display: flex;
@@ -507,7 +512,7 @@ header.sticky {
     height: 100vh;
     align-items: center;
     padding: 20px;
-}
+  }
 
 
   .your-container {
@@ -523,7 +528,7 @@ header.sticky {
     align-items: center;
     height: 50%;
     gap: 30px;
-    padding-left: 0;  
+    padding-left: 0;
   }
 
   .your2 {
@@ -535,35 +540,37 @@ header.sticky {
     font-size: 15px;
     font-weight: 300;
   }
-  
+
   .line-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
   }
-  
+
   .your {
     font-size: 1.2rem;
     position: absolute;
     top: -50px;
     text-align: center;
   }
-  
+
   .line {
     width: 1px;
     background: black;
-    height: 280px; /* Adjust height to match design */
+    height: 280px;
+    /* Adjust height to match design */
     margin: 0 20px;
   }
-  
+
   .right {
     padding-left: 10px;
-    font-size: 1rem; /* Adjust font size for readability */
+    font-size: 1rem;
+    /* Adjust font size for readability */
   }
-  
+
 
   .menu-options {
     flex-direction: column;
@@ -571,12 +578,14 @@ header.sticky {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'serif'; /* Ensure the font matches your design */
+    font-family: 'serif';
+    /* Ensure the font matches your design */
     margin-top: 15px;
   }
 
   .menu-item {
-    font-size: 1rem; /* Adjust font size for better readability */
+    font-size: 1rem;
+    /* Adjust font size for better readability */
   }
 }
 
@@ -592,13 +601,14 @@ header.sticky {
 }
 
 .text-style312 {
-font-family: serif; /* Serif font for a classic look */
-margin-right: 10px;
-color: #000000;
-font-size: 1.1rem;
-transition: color 0.3s ease;
-cursor: pointer;
-transition: transform 0.3s ease, opacity 0.3s ease
+  font-family: serif;
+  /* Serif font for a classic look */
+  margin-right: 10px;
+  color: #000000;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease
 }
 
 .text-style3::after {
@@ -626,6 +636,7 @@ transition: transform 0.3s ease, opacity 0.3s ease
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -637,6 +648,7 @@ transition: transform 0.3s ease, opacity 0.3s ease
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(100%);
     opacity: 0;
@@ -658,9 +670,11 @@ transition: transform 0.3s ease, opacity 0.3s ease
 .menu-item {
   display: flex;
   align-items: center;
-  color: #000; /* Adjust color to match your design */
+  color: #000;
+  /* Adjust color to match your design */
   font-weight: 500;
-  font-size: 1.1rem; /* Adjust font size as needed */
+  font-size: 1.1rem;
+  /* Adjust font size as needed */
   text-transform: uppercase;
   font-size: 1.1rem;
   width: 200px;
@@ -700,8 +714,10 @@ transition: transform 0.3s ease, opacity 0.3s ease
   .nav-links {
     display: none;
   }
+
   .language-options {
-    display: flex; /* Only show language options */
+    display: flex;
+    /* Only show language options */
   }
 }
 
@@ -709,27 +725,32 @@ transition: transform 0.3s ease, opacity 0.3s ease
 @media (min-width: 769px) {
   .nav-links {
     display: flex;
-    gap: 2rem; /* Adjust as needed */
+    gap: 2rem;
+    /* Adjust as needed */
   }
+
   .language-options {
     display: flex;
   }
 }
 
 .language-options a {
-  color: #ffffff; /* Text color for language links */
+  color: #ffffff;
+  /* Text color for language links */
   font-weight: 500;
   font-size: 1.2rem;
   text-decoration: none;
   transition: color 0.3s ease;
   font-family: serif;
 }
+
 .language-options a:hover {
   color: rgba(105, 95, 76, 0.8);
 }
 
 .navbar.scrolled {
-  background-color: black; /* Add black background when scrolled */
+  background-color: black;
+  /* Add black background when scrolled */
 }
 
 .navbar-container.navbar-scrolled .language-options {
