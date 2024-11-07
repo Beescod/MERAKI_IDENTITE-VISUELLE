@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import '../assets/css/Home.css';
 import MobileBooking from '../components/MobileBooking';
 import Laser from '../assets/images/Laser.jpg';
-import LoagoL from '../assets/images/LoagoL.png';
+import LoagoL from '../assets/images/BDLogo.png';
 
 
 const Home = () => {
